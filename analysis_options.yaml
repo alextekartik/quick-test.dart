@@ -1,3 +1,7 @@
+analyzer:
+  strong-mode:
+    implicit-casts: false
+
 # This file allows you to configure the Dart analyzer.
 #
 # The commented part below is just for inspiration. Read the guide here:
