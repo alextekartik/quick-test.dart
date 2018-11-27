@@ -14,8 +14,8 @@ dependencies:
     git:
       url: git://github.com/tekartik/build_utils.dart
       ref: dart2
-  pubtest:
+  tekartik_pubtest:
     git:
       url: git://github.com/tekartik/pubtest.dart
       ref: dart2
-    version: '>=0.2.0'
+    version: '>=0.6.0'

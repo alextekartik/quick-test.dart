@@ -6,7 +6,7 @@ set -e
 pkgtest ()
 {
     echo "\$ pkgtest -sgit $*" 1>&2;
-    eval "pub run pubtest:pubtestpackage -sgit $* -r expanded"
+    eval "pub run tekartik_pubtest:pubtestpackage -sgit $* -r expanded"
 }
 
 # export pkgtest="pub run pubtest:pubtestpackage -sgit"
