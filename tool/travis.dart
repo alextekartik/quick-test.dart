@@ -1,31 +1,22 @@
 import 'dart:async';
-import 'package:tekartik_build_utils/cmd_run.dart';
+import 'package:process_run/shell.dart';
 
 Future test(String git,
-    {List<String> platforms,
-    String name,
-    List<String> pubTestPackageArgs}) async {
-  var args = [
-    'run',
-    'tekartik_pubtest:pubtestpackage',
-    '-sgit',
-    git,
-    '-r',
-    'expanded'
-  ];
+    {List<String>? platforms,
+    String? name,
+    List<String>? pubTestPackageArgs}) async {
+  var sb = StringBuffer(
+      'dart run tekartik_pubtest:pubtestpackage -sgit ${shellArgument(git)} -r expanded -v');
   if (platforms != null) {
-    args.addAll(['-p', platforms.join(',')]);
+    sb.write(' -p ${platforms.join(',')}');
   }
   if (name != null) {
-    args.addAll(['--name', 'index_cursor']);
+    sb.write(' --name ${shellArgument(name)}');
   }
   if (pubTestPackageArgs != null) {
-    args.addAll(pubTestPackageArgs);
+    sb.write(' ${shellArguments(pubTestPackageArgs)}');
   }
-  // verbose
-  args.add('-v');
-  var cmd = PubCmd(args);
-  await runCmd(cmd);
+  await run(sb.toString());
 }
 
 Future main() async {
