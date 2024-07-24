@@ -1,18 +1,15 @@
 name: quick_test
 version: 0.1.0
 description: Quickly test packages
+publish_to: none
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ^3.4.0
 
 dependencies:
-  chrome_travis:
-    git:
-      url: git://github.com/tekartik/chrome_travis.dart
-      ref: null_safety
-    version: '>=0.1.3'
-  dev_test:
+  dev_build:
+  process_run:
   tekartik_pubtest:
     git:
-      url: git://github.com/tekartik/pubtest.dart
-      ref: null_safety
+      url: https://github.com/tekartik/pubtest.dart
+      ref: dart3a
     version: '>=0.7.1'
