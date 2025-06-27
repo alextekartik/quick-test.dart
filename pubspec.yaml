@@ -3,11 +3,11 @@ version: 0.1.0
 description: Quickly test packages
 publish_to: none
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.8.0
 
 dependencies:
-  dev_build:
-  process_run:
+  dev_build: ">=1.1.2"
+  process_run: ">=1.2.1+1"
   tekartik_pubtest:
     git:
       url: https://github.com/tekartik/pubtest.dart

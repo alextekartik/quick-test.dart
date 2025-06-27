@@ -1,12 +1,15 @@
 import 'dart:async';
 import 'package:process_run/shell.dart';
 
-Future test(String git,
-    {List<String>? platforms,
-    String? name,
-    List<String>? pubTestPackageArgs}) async {
+Future test(
+  String git, {
+  List<String>? platforms,
+  String? name,
+  List<String>? pubTestPackageArgs,
+}) async {
   var sb = StringBuffer(
-      'dart run tekartik_pubtest:pubtestpackage -sgit ${shellArgument(git)} -r expanded -v');
+    'dart run tekartik_pubtest:pubtestpackage -sgit ${shellArgument(git)} -r expanded -v',
+  );
   if (platforms != null) {
     sb.write(' -p ${platforms.join(',')}');
   }
